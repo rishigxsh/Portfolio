@@ -23,8 +23,13 @@
 }
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { background: var(--bg); color: var(--text); font-family: var(--mono); overflow-x: hidden; cursor: none; }
+body { background: var(--bg); color: var(--text); font-family: var(--mono); overflow-x: hidden; }
+@media (hover: hover) and (pointer: fine) { body { cursor: none; } }
 
+#cursor, #cursor-ring { transition: opacity .2s; }
+@media (hover: none) or (pointer: coarse) {
+  #cursor, #cursor-ring { display: none !important; }
+}
 #cursor {
   width: 10px; height: 10px; background: var(--accent); border-radius: 50%;
   position: fixed; pointer-events: none; z-index: 9999;
@@ -95,7 +100,7 @@ section { position: relative; z-index: 1; }
 .btn {
   padding: 12px 26px; font-family: var(--mono); font-size: 12px;
   letter-spacing: .08em; text-transform: uppercase; text-decoration: none;
-  border-radius: 4px; transition: all .2s; cursor: none;
+  border-radius: 4px; transition: all .2s;
   display: inline-flex; align-items: center; gap: 8px;
 }
 .btn-primary { background: var(--accent); color: #000; font-weight: 600; }
@@ -209,9 +214,14 @@ footer { position: relative; z-index: 1; padding: 24px 48px; border-top: 1px sol
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
+.nav-toggle { display: none; background: none; border: none; color: var(--accent); cursor: pointer; padding: 8px; -webkit-tap-highlight-color: transparent; }
+.nav-toggle svg { width: 24px; height: 24px; }
+.nav-links.open { display: flex !important; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(8,11,15,0.98); backdrop-filter: blur(20px); padding: 24px; gap: 20px; border-bottom: 1px solid var(--border); }
+
 @media (max-width: 900px) {
-  nav { padding: 16px 24px; }
+  nav { padding: 16px 24px; flex-wrap: wrap; }
   .nav-links { display: none; }
+  .nav-toggle { display: block; }
   #hero, .section-wrap { padding: 100px 24px 60px; }
   .about-grid, .skills-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
@@ -228,7 +238,10 @@ footer { position: relative; z-index: 1; padding: 24px 48px; border-top: 1px sol
 
 <nav>
   <div class="nav-logo">RR<span>.</span></div>
-  <ul class="nav-links">
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
+  <ul class="nav-links" id="navLinks">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -436,6 +449,14 @@ document.querySelectorAll('a,button').forEach(el => {
   el.addEventListener('mouseenter', () => { cursor.style.width='16px'; cursor.style.height='16px'; ring.style.width='52px'; ring.style.height='52px'; });
   el.addEventListener('mouseleave', () => { cursor.style.width='10px'; cursor.style.height='10px'; ring.style.width='36px'; ring.style.height='36px'; });
 });
+
+// Mobile nav toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+}
 
 // Scroll reveal
 const obs = new IntersectionObserver(entries => {
