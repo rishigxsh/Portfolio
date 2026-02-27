@@ -223,11 +223,21 @@ footer { position: relative; z-index: 1; padding: 24px 48px; border-top: 1px sol
   .nav-links { display: none; }
   .nav-toggle { display: block; }
   #hero, .section-wrap { padding: 100px 24px 60px; }
-  .about-grid, .skills-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .skills-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
-  .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+  .project-card { grid-column: 1 !important; }
+  .project-card.featured { grid-template-columns: 1fr; }
+  .exp-header { flex-direction: column; align-items: flex-start; }
+  .hero-tag { flex-wrap: wrap; line-height: 1.8; }
   .hero-stats { gap: 28px; }
   footer { flex-direction: column; gap: 8px; text-align: center; }
+}
+@media (max-width: 540px) {
+  .hero-name { font-size: clamp(32px, 9vw, 48px); letter-spacing: -0.5px; }
+  .section-title { letter-spacing: -0.5px; }
+  .contact-links { flex-direction: column; align-items: stretch; }
+  .contact-link { justify-content: center; }
 }
 </style>
 </head>
