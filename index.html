@@ -274,14 +274,14 @@ footer { position: relative; z-index: 1; padding: 24px 48px; border-top: 1px sol
   <div class="hero-actions">
     <a href="#projects" class="btn btn-primary">View Projects</a>
     <a href="#contact" class="btn btn-ghost">Get in Touch</a>
-    <a href="https://drive.google.com/file/d/1dZgteDRM9tDnKXvNMJ8qFrWCMz0Q2Yhj/view?usp=sharing" target="_blank" class="btn btn-resume">
+    <a href="https://drive.google.com/file/d/1DWkbgy8cSB0YLHuOCaVN_LgAxNwu6LOB/view?usp=sharing" target="_blank" class="btn btn-resume">
       <svg viewBox="0 0 16 16" fill="currentColor"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
       Resume
     </a>
   </div>
   <div class="hero-stats">
     <div><span class="stat-num">3.52<span>/4</span></span><div class="stat-label">GPA · Purdue CS</div></div>
-    <div><span class="stat-num">4<span>+</span></span><div class="stat-label">Shipped Projects</div></div>
+    <div><span class="stat-num">5<span>+</span></span><div class="stat-label">Shipped Projects</div></div>
     <div><span class="stat-num">99.5<span>%</span></span><div class="stat-label">mAP50 · CV Model</div></div>
     <div><span class="stat-num">May<span> '26</span></span><div class="stat-label">Graduation</div></div>
   </div>
@@ -401,6 +401,21 @@ footer { position: relative; z-index: 1; padding: 24px 48px; border-top: 1px sol
         </div>
       </div>
 
+      <div class="project-card reveal" style="grid-column:span 2;">
+        <div class="project-num">Project 05</div>
+        <div class="project-title">MarketPulse — Real-Time Financial Data Pipeline</div>
+        <p class="project-desc">Built and deployed a full-stack financial data pipeline (React 18 + TypeScript + FastAPI + PostgreSQL) that ingests real-time price data for 50 cryptocurrencies and 25 US stocks via CoinGecko and Finnhub APIs, with an interactive dashboard featuring multi-timeframe charts (24h/7d/30d), a watchlist, and configurable price alerts auto-checked every 30s.</p>
+        <ul class="exp-bullets" style="margin-top:4px;">
+          <li>Designed a scalable backend with PostgreSQL for time-series price storage, Redis caching for fast API responses, and an automated background ingestion loop deployed end-to-end with Docker across Render (backend) and Vercel (frontend).</li>
+          <li>Implemented a historical backfill system with modular ingestion scripts for both crypto and stock data, enabling 30 days of price history to be populated on first deploy and supporting flexible re-ingestion without duplicating records.</li>
+        </ul>
+        <div class="project-stack" style="margin-top:8px;"><span class="stack-tag">React</span><span class="stack-tag">TypeScript</span><span class="stack-tag">FastAPI</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">Redis</span><span class="stack-tag">Docker</span><span class="stack-tag">Vercel</span><span class="stack-tag">Render</span></div>
+        <div class="project-links" style="margin-top:8px;">
+          <a href="https://github.com/rishigxsh/MarketPulse" target="_blank" class="project-link"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+          <a href="https://market-pulse-rouge.vercel.app" target="_blank" class="project-link"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146z"/></svg>Live Demo</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -408,7 +423,7 @@ footer { position: relative; z-index: 1; padding: 24px 48px; border-top: 1px sol
 <section id="contact">
   <div class="section-wrap">
     <div class="contact-inner">
-      <div class="section-label" style="justify-content:center;margin-bottom:24px;">05 &nbsp;·&nbsp; Contact</div>
+      <div class="section-label" style="justify-content:center;margin-bottom:24px;">06 &nbsp;·&nbsp; Contact</div>
       <div class="section-title reveal">Let's Work Together</div>
       <p class="contact-sub reveal">I'm actively seeking Summer 2026 SWE internships. Available via CPT — no visa sponsorship required from the employer. Reach out directly or connect on LinkedIn.</p>
       <div class="contact-links reveal">
@@ -424,7 +439,7 @@ footer { position: relative; z-index: 1; padding: 24px 48px; border-top: 1px sol
           <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           GitHub
         </a>
-        <a href="https://drive.google.com/file/d/1dZgteDRM9tDnKXvNMJ8qFrWCMz0Q2Yhj/view?usp=sharing" target="_blank" class="contact-link" style="border-color:rgba(255,107,53,.4);color:var(--accent3);">
+        <a href="https://drive.google.com/file/d/1DWkbgy8cSB0YLHuOCaVN_LgAxNwu6LOB/view?usp=sharing" target="_blank" class="contact-link" style="border-color:rgba(255,107,53,.4);color:var(--accent3);">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
           Download Resume
         </a>
